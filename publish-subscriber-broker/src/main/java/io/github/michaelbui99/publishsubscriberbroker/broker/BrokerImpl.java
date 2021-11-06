@@ -2,7 +2,6 @@ package io.github.michaelbui99.publishsubscriberbroker.broker;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,7 +10,6 @@ import com.google.gson.Gson;
 import io.github.michaelbui99.publishsubscriberbroker.shared.Callbackable;
 import io.github.michaelbui99.publishsubscriberbroker.shared.Message;
 import lombok.Data;
-import lombok.NonNull;
 import lombok.Synchronized;
 
 @Data
@@ -79,8 +77,8 @@ public class BrokerImpl implements Broker, RMIServer{
     public void broadcastMessage(String topic, Object messageContent) {
         // TODO Auto-generated method stub
         String messageContentAsJson = gson.toJson(messageContent); 
-        Message message = new Message(topic, messageContentAsJson);
-        
+        Message message = new Message();
+
     }
 
 
